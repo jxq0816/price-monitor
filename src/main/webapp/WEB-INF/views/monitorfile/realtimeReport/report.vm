@@ -1,0 +1,166 @@
+<body>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/pmonitor/css/presentation.css">
+    <script src="/static/pmonitor/js/presentation.js?v=20170706111444"></script>
+    <script src="/static/pmonitor/js/report.js?v=20170706111444"></script>
+</head>
+<body>
+##点击查看form表单提交
+<form action='/realtime/task/child/detail' method='post' id="formId0">
+    <input type="hidden" name="childTaskId" value="" id="datachildtaskid"/>
+    <input type="hidden" name="categoryName" value="" id="datacategoryname"/>
+    <input type="hidden" name="taskId" value="" id="datataskId"/>
+    <input type="hidden" id="pageNo" value="" name="pageNo">
+    <input type="hidden" id="orderParam" value="warningTime" name="orderParam">
+</form>
+
+<form action="/realtime/task" method="post" id="formId3">
+##默认显示任务名称id
+    <input type="hidden" id="datanum" name="taskId" value=""  autocomplete="off"/>
+##默认任务名称的品类的名称
+    <input type="hidden" id="datatextli" name="categoryName" value=""  autocomplete="off"/>
+</form>
+##默认显示任务名称
+<input type="hidden" id="taskName" value="$!{lastTask.taskName}"/>
+##默认显示任务名称id
+<input type="hidden" id="currenttaskId" name="" value="$!{lastTask.taskId}"/>
+##默认任务名称的品类的名称
+<input type="hidden" id="categoryName" name="" value="$!{lastTask.categoryName}"/>
+#*##点击任务名称之后的id
+<input type="hidden" id="taskId" value=""/>
+##点击任务名称之后的品类名称
+<input type="hidden" id="categoryName1" value=""/>*#
+<div class="templatemo-content-wrapper">
+    <div class="whiteDiv">
+        <div class="category" id="category">
+            <div class="left category_left none">
+                <h4 class="blue">品类</h4>
+                <ul id="hoverli">
+                </ul>
+            </div>
+            <div class="left category_right none">
+                <div class="top">
+                    <span class="allcategory">任务名称</span>
+                    <p id="letter">
+                    </p>
+                </div>
+                <div class="bottom" id="taskname">
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="selectdiv" id="selectdiv">
+            <div class="left">
+                #if($!{lastTask.size()} > 0)
+                    $!{lastTask.taskName}
+                #else
+                    暂无任务
+                #end
+            </div>
+            <span class="right">
+                  <span class="caret"></span>
+            </span>
+        </div>
+        <h2>任务信息</h2>
+        #if($!{lastTask.size()} > 0)
+            <table class="tableborder" cellspacing="0" cellpadding="0" id="removetd">
+                <thead>
+                <tr>
+                    #foreach($param in ${lastTask.entrySet()})
+##                        #if(${param.key}=="taskId" ||${param.key}=="taskName")
+                        #if($!{velocityCount}==1 || $!{velocityCount}==2)
+                        #else
+                            <th>
+                                #if(${param.key} == "categoryName")
+                                    品类
+                                #else
+                                    ${param.key}
+                                #end
+                            </th>
+                        #end
+                    #end
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    #foreach($param in ${lastTask.entrySet()})
+                        #if($!{velocityCount}==1 || $!{velocityCount}==2)
+                        #else
+                        <td>
+                            ${param.value}
+                        </td>
+                        #end
+                    #end
+                </tr>
+                </tbody>
+            </table>
+        #else
+            <div class="nodata">暂无数据，请 <a style="font-size: 18px; color: #388ADE;" href="javascript:" onclick="addNewTask()">添加监测任务</a></div>
+        #end
+    </div>
+    <div id="task_child_list">
+        <div class="whiteDiv">
+            <h3>
+                <span class="glyphicon glyphicon-list-alt blue"></span>
+                产品信息
+            </h3>
+            <table class="tableborder" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th>
+                        品牌
+                    </th>
+                    <th class="product-description">
+                        产品描述
+                    </th>
+                    <th>
+                        平台
+                    </th>
+                    <th>
+                        店铺名称
+                    </th>
+                    <th>
+                        报警类型
+                    </th>
+                    <th>
+                        报警价格
+                    </th>
+                    <th>
+                        报警次数
+                        <span class="caret"  onclick="sortfn('warningNumber')"></span>
+                    </th>
+                    <th>
+                        最新报警时间
+                        <span class="caret" onclick="sortfn('warningTime')"></span>
+                    </th>
+                    <th>
+                        监测详情
+                    </th>
+
+                </tr>
+                #if($!{page.result.size()} > 0)
+                    #foreach($child in $!page.result)
+                        <tr>
+                            <td>$!{child.brand}</td>
+                            <td>$!{child.productDescription}</td>
+                            <td>$!{child.platform}</td>
+                            <td>$!{child.sellerName}</td>
+                            <td>$!{child.monitorType}</td>
+                            <td>$!{child.warningPrice}</td>
+                            <td class="red">$!{child.warningNumber}</td>
+                            <td>$!{child.warningTime}</td>
+                            <td>
+                                <a class="blue" href="">查看</a>
+                            </td>
+                        </tr>
+                    #end
+                #end
+            </table>
+            #pagingUnique($page,"getEntityTable")
+        </div>
+    </div>
+</div>
+</body>

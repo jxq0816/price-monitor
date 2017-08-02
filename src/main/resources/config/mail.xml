@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <!-- 邮件发送服务bean -->
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="${config.mail.host}"/>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">${config.mail.smtp.auth}</prop>
+                <prop key="mail.smtp.timeout">${config.mail.smtp.timeout}</prop>
+                <prop key="mail.smtp.port">${config.mail.smtp.port}</prop>
+                <prop key="mail.smtp.starttls.enable">${config.mail.smtp.starttls.enable}</prop>
+            </props>
+        </property>
+        <property name="username" value="${config.mail.username}"/>
+        <property name="password" value="${config.mail.password}"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,31 @@
+<table class="tableborder" cellspacing="0" cellpadding="0">
+    #if($!{moreType}=="0")
+        <tr>
+            <th>活动内容</th>
+            <th>报警时间</th>
+            <th>报警价格</th>
+        </tr>
+    #else
+    <tr>
+        <th>活动内容</th>
+        <th>活动时间</th>
+        <th>成交价格</th>
+    </tr>
+    #end
+    #if($!{page.result.size()} > 0)
+        #foreach($tabledata in $!page.result)
+            <tr>
+                <td>$!{tabledata.content}</td>
+                <td>$!DateTool.format("yyyy.MM.dd HH:mm:ss",$!{tabledata.createdOn})</td>
+                <td>$!{tabledata.price}</td>
+            </tr>
+        #end
+     #else
+           <tr>
+               <td colspan="3" >暂无内容</td>
+           </tr>
+
+    #end
+
+</table>
+#pagingUnique($page,"getTableData")

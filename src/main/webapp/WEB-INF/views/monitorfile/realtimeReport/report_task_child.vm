@@ -1,0 +1,63 @@
+
+<div class="whiteDiv">
+    <h3>
+        <span class="glyphicon glyphicon-list-alt blue"></span>
+        产品信息
+    </h3>
+    <table class="tableborder" cellspacing="0" cellpadding="0">
+        <tr>
+            <th>
+                品牌
+            </th>
+            <th class="product-description">
+                产品描述
+            </th>
+            <th>
+                平台
+            </th>
+            <th>
+                店铺名称
+            </th>
+            <th>
+                报警类型
+            </th>
+            <th>
+                报警价格
+            </th>
+            <th>
+                报警次数
+                <span class="caret"  onclick="sortfn('warningNumber')"></span>
+            </th>
+            <th>
+                最新报警时间
+                <span class="caret" onclick="sortfn('warningTime')"></span>
+            </th>
+            <th>
+                监测详情
+            </th>
+
+        </tr>
+        #if($!{page.result.size()} > 0)
+            #foreach($child in $!page.result)
+                <tr data-taskId="$!{child.taskId}" data-categoryName="$!{child.categoryName}" data-childTaskId="$!{child.childTaskId}">
+                    <td>$!{child.brand}</td>
+                    <td>$!{child.productDescription}</td>
+                    <td>$!{child.platform}</td>
+                    <td>$!{child.sellerName}</td>
+                    <td>$!{child.monitorType}</td>
+                    <td>$!{child.warningPrice}</td>
+                    <td class="red">$!{child.warningNumber}</td>
+                    <td>$!{child.warningTime}</td>
+                    <td>
+                        <a class="blue looked" href="javascript:;">查看</a>
+                    </td>
+                </tr>
+            #end
+        #else
+            <tr>
+                <td colspan="9" >暂无内容</td>
+            </tr>
+        #end
+    </table>
+    #pagingUnique($page,"getEntityTable")
+</div>

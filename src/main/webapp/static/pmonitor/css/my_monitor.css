@@ -1,0 +1,68 @@
+.myMonitor {
+    width: 100%;
+    background-color: #fff;
+    padding-bottom: 30px;
+}
+
+.monitorList {
+    width: 100%;
+    line-height:100px;
+    color:#388ADE;
+    font-size: 16px;
+}
+.monitorList a {
+    display: inline-block;
+    float: right;
+    margin-right: 1.5%;
+    font-size: 16px;
+    color: #388ADE;
+}
+
+.myMonitor table{
+    width: 97%;
+    border-left: 1px solid #bcbcbc;
+    border-top: 1px solid #bcbcbc;
+    table-layout:fixed;
+    /*overflow:hidden;*/
+    margin: 0 auto;
+}
+.myMonitor table th,.myMonitor table td {
+    padding: 0 10px;
+    line-height: 36px;
+}
+.myMonitor table th{
+    border-right: 1px solid #bcbcbc;
+    border-bottom: 1px solid #bcbcbc;
+    background-color: #F5F5F5;
+}
+.myMonitor table td{
+    border-right: 1px solid #bcbcbc;
+    border-bottom: 1px solid #bcbcbc;
+    line-height: 70px;
+}
+.myMonitor table td button{
+    line-height: 32px;
+    padding: 0 6px;
+    color: #53A1F5;
+    border: 1px solid #53A1F5;
+    background-color: #FFF;
+    font-size: 14px;
+}
+
+
+.myMonitor table tbody tr:nth-child(2n){
+    background-color: #F5F5F5;
+}
+
+.tableTd{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+.triggered{
+    color: #E33B3B;
+}
+.inTracking{
+    color: #F2B654;
+}

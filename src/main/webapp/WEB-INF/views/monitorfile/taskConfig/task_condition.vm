@@ -1,0 +1,25 @@
+#foreach($categoryAttribute in $!categoryAttributes)
+    #if($!{categoryAttribute.englishField}=="platform")
+        <div class="col-md-6">
+            <span>$!{categoryAttribute.chineseField}</span>
+            <div class="supplierName" id="$!{categoryAttribute.englishField}">
+            </div>
+        </div>
+    #else
+        <div class="col-md-6">
+            <span>$!{categoryAttribute.chineseField}</span>
+            <select  name="$!{categoryAttribute.englishField}" id="$!{categoryAttribute.englishField}"  onchange="categoryNames(this)" onclick="categoryIsnull(this)">
+                <option value>请选择</option>
+            </select>
+        </div>
+    #end
+
+#end
+
+<div class="col-md-6">
+    <span>接收邮箱</span>
+    <input type="text" placeholder="请填写邮件地址" name="email" value="$!{applicationAccount.email}" onblur="taskEmail()" maxlength="30" id="taskemail">
+    <p id="emailTips" style="position: absolute; margin-left: 27%;color: red;"></p>
+
+    
+</div>

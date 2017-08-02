@@ -1,0 +1,14 @@
+package $PACKAGE_ENTITY$;
+
+$ENTITY_IMPORT$
+
+@Deprecated
+public class $ENTITY$ implements java.io.Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+$ENTITYFIELDS$
+
+
+$ENTITYFIELDSGETSETMETHOD$
+}

@@ -1,0 +1,32 @@
+<table cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+        <th width="1%" style="visibility:hidden;"></th>
+        <th width="14%"><input type="checkbox" id="task_all" onclick="selectTaskAll()"><label for="task_all">全选</label></th>
+        <th width="50%">商品信息</th>
+        <th width="10%">店铺名称</th>
+        <th width="10%">当前成交价</th>
+        <th width="15%">预警价格</th>
+    </tr>
+    </thead>
+    <tbody>
+        #if($!{productLibraryCommodities.size()} > 0)
+
+            #foreach($productLibraryCommoditie in $!productLibraryCommodities)
+            <tr>
+                <td style="visibility:hidden;">$!{productLibraryCommoditie.pageUrl}</td>
+                <td><input type="checkbox" onclick="selAllStatus()"></td>
+                <td title="$!{productLibraryCommoditie.productDescription}">$!{productLibraryCommoditie.productDescription}</td>
+                <td title="$!{productLibraryCommoditie.sellerName}">$!{productLibraryCommoditie.sellerName}</td>
+                <td>$!{productLibraryCommoditie.stickPrice}</td>
+                #set($previousPageNum = ($!{productLibraryCommoditie.stickPrice} - 0.1))
+                <td><input type="text" value="$!{previousPageNum}" class="warnPrice" id="warnPrice"></td>
+            </tr>
+            #end
+        #else
+        <tr>
+            <td colspan="8" style="text-align: center;">暂无数据</td>
+        </tr>
+        #end
+    </tbody>
+</table>

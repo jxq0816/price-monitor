@@ -1,0 +1,100 @@
+#macro(pagingUnique $page $function)
+    #if($!{page.result.size()} > 0)
+    <div id="uniquePageDivId">
+        <script>
+            function changePageUnique(pageNo) {
+                if(pageNo == -1){
+                    pageNo = $("#changeToPageNumUnique").val();
+                }
+                if($.trim(pageNo) == ""){
+                    $.MsgBox.Alert("温馨提示","跳转的页码为空！");
+                    return;
+                }
+                pageNo = $.trim(pageNo);
+                var re = /^[0-9]+$/ ;
+                var isInt = re.test(pageNo);
+                if(!isInt){
+                    $.MsgBox.Alert("温馨提示","跳转的页码非法！");
+                    return;
+                }
+
+                if(pageNo * 1 > $!{page.pageBean.totalPage}){
+                    $.MsgBox.Alert("温馨提示","跳转的页码大于总共的页码数！");
+                    return;
+                }
+
+                $("#uniquePageNo").val(pageNo);
+                    $!{function}();
+            }
+
+        </script>
+        <input type="hidden" id="uniquePageNo" value="$!{page.pageBean.pageNo}"/>
+        共$!{page.pageBean.totalNum}条&nbsp;&nbsp;&nbsp;&nbsp;
+        #if($!{page.pageBean.hasPreviousPage})
+            #set($previousPageNum = ($!{page.pageBean.pageNo} + (-1)))
+            <a href="javascript:changePageUnique($!{previousPageNum})" class="pagesStyle">上一页</a>
+        #end
+
+        #if($!{page.pageBean.totalPage} < 10)
+            #foreach($pages in [1..$!{page.pageBean.totalPage}])
+                #if($pages == $!{page.pageBean.pageNo})
+                    <a class="nowpage">$!{pages}</a>
+                #else
+                    <a href="javascript:changePageUnique($!{pages})"  class="pagesnation">$pages</a>
+                #end
+
+            #end
+        #else
+            #if( $!{page.pageBean.pageNo} > 5)
+                <a href="javascript:changePageUnique(1)" class="pagesStyle">首页</a>
+                <span> ...</span>
+            #end
+            #foreach($pages in [1..$!{page.pageBean.totalPage}])
+
+                #if($pages == $!{page.pageBean.pageNo})
+                    #if($!{page.pageBean.pageNo} <= 5 )
+                        #set($total=9)
+                    #else
+                        #set($total=$!{page.pageBean.pageNo} + 4)
+                    #end
+
+
+                    #if($!{page.pageBean.pageNo} > 5 && $!{page.pageBean.pageNo} <= ($!{page.pageBean.totalPage}  - 4) )
+                        #set($pre=$!{page.pageBean.pageNo} - 4)
+                    #elseif($!{page.pageBean.pageNo} > ($!{page.pageBean.totalPage}  - 4))
+                        #set($pre=$!{page.pageBean.totalPage} - 8)
+                    #else
+                        #set($pre=1)
+                    #end
+
+                    #foreach($pages in [$pre..$total])
+                        #if( $pages <= $!{page.pageBean.totalPage})
+                            #if($pages == $!{page.pageBean.pageNo})
+                                <a class="nowpage">$!{pages}</a>
+
+                            #else
+                                <a href="javascript:changePageUnique($pages)" class="pagesnation">$pages</a>
+                            #end
+                        #end
+
+                    #end
+                #end
+            #end
+            #if( $!{page.pageBean.pageNo} < $!{page.pageBean.totalPage} - 4)
+                <span> ...</span>
+                <a href="javascript:changePageUnique($!{page.pageBean.totalPage})" class="pagesStyle">尾页</a>
+            #end
+        #end
+
+
+        #if($!{page.pageBean.hasNextPage})
+            #set($nextPageNum = ($!{page.pageBean.pageNo} + 1))
+            <a href="javascript:changePageUnique($!{nextPageNum})" class="pagesStyle">下一页</a>
+        #end
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        共$!{page.pageBean.totalPage}页
+        到第&nbsp;<input type="number" min="1" max="$!{page.pageBean.totalPage}" id="changeToPageNumUnique" value="$!{page.pageBean.pageNo}"/>&nbsp;页
+        &nbsp;&nbsp;<a href="javascript:changePageUnique(-1)" class="pagesStyle">确定</a>
+    </div>
+    #end
+#end

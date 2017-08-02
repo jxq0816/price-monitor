@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/decorators">
+    <excludes>
+        <pattern>/static/*</pattern>
+    </excludes>
+
+    <decorator name="monitor_analysis" page="monitor_analysis.vm">
+        <pattern>/monitors/addmonitor</pattern>
+        <pattern>/monitors/taskConfiguration</pattern>
+        <pattern>/monitors/taskConfiguration/updateTask/*</pattern>
+        <pattern>/industryList/getCategoryName</pattern>
+        <pattern>/system/error</pattern>
+        <pattern>/realtime/task</pattern>
+        <pattern>/realtime/last/task</pattern>
+        <pattern>/realtime/task/child/detail</pattern>
+        <pattern>/realtime/task/child/detail/more</pattern>
+    </decorator>
+</decorators>

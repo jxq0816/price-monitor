@@ -1,0 +1,74 @@
+<div class="foot">
+##    <div class="foot_menu">
+##        <ul class="ul_menu">
+##            <li class="type">平台产品</li>
+##            <li class="name">
+##                <a href="/index.php/Archives/IndexArctype/index/t_id/9.html">产品模块</a>
+##            </li>
+##            <li class="name">
+##                <a href="/index.php/Archives/IndexArctype/index/t_id/54.html">业务能力</a>
+##            </li>
+##        </ul>
+##        <ul class="ul_menu">
+##            <li class="type">客户案例</li>
+##            <li class="name">
+##                <a href="/index.php/Archives/IndexArctype/index/t_id/12.html">典型案例</a>
+##            </li>
+##            <li class="name">
+##                <a href="/index.php/Archives/IndexArctype/index/t_id/13.html">客户名单</a>
+##            </li>
+##            <li class="name">
+##                <a href="/index.php/Archives/IndexArctype/index/t_id/14.html">行业报告</a>
+##            </li>
+##        </ul>
+##        <ul class="ul_menu">
+##            <li class="type">合作伙伴</li>
+##            <li class="name">
+##                <a href="/index.php/Archives/IndexArctype/index/t_id/33.html">战略伙伴</a>
+##            </li>
+##            <li class="name">
+##                <a href="/index.php/Archives/IndexArctype/index/t_id/34.html">分销伙伴</a>
+##            </li>
+##            <li class="name">
+##                <a href="/index.php/Archives/IndexArctype/index/t_id/35.html">技术伙伴</a>
+##            </li>
+##            <li class="name"><a href="/index.php/Archives/IndexArctype/index/t_id/36.html">咨询伙伴</a>
+##            </li>
+##        </ul>
+##        <ul class="ul_menu">
+##            <li class="type">博客</li>
+##        </ul>
+##        <ul class="ul_menu">
+##            <li class="type">申请试用</li>
+##            <li class="name">
+##                <a href="/index.php/Archives/IndexArctype/index/t_id/23.html">申请试用</a>
+##            </li>
+##            <li class="name">
+##                <a href="/index.php/Archives/IndexArctype/index/t_id/24.html">Demo演示</a>
+##            </li>
+##        </ul>
+##        <ul class="ul_menu">
+##            <li class="type">关于博晓通</li>
+##            <li class="name">
+##                <a href="/index.php/Archives/IndexArctype/index/t_id/26.html">公司介绍</a>
+##            </li>
+##            <li class="name">
+##                <a href="/index.php/Archives/IndexArctype/index/t_id/30.html">新闻动态</a>
+##            </li
+##            ><li class="name">
+##            <a href="/index.php/Archives/IndexArctype/index/t_id/31.html">人才招聘</a>
+##        </li>
+##            <li class="name">
+##                <a href="/index.php/Archives/IndexArctype/index/t_id/32.html">联系我们</a>
+##            </li>
+##        </ul>
+##        <ul class="ewm">
+##            <li><p><img src="/static/scenic/images/weixin.jpg"  alt="博晓通微信二维码8cm.jpg"></p><br>扫描添加微信</li>
+##            <li><p><img src="/static/scenic/images/weibo.png"  alt="博晓通微博二维码_8.png"></p><br>扫描添加微博</li>
+##        </ul>
+##        <div class="clear"></div>
+##    </div>
+    <div class="foot_content">
+        <div class="content">Copyright ©2010 - 2017 博晓通 京ICP备12047578号 Powered by</div>
+    </div>
+</div>

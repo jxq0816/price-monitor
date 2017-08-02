@@ -1,0 +1,8 @@
+<div id="page-wrapper" class="page-wrapper-signup">
+    <div class="main-page">
+        <div class="sign-form middle-form">
+            <div class="paddingtop">抱歉，系统错误或者您的操作有误，请稍后重试，如果错误依然存在，请联系我们。</div>
+            <div class="paddingtop">错误提示：$!{message}</div>
+        </div>
+    </div>
+</div>

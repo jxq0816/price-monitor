@@ -1,0 +1,25 @@
+<div style=" min-width: 635px;">
+    <div style=" margin-bottom: 20px;height: 65px; background:-moz-linear-gradient(left,#E3E9EF,#6A88AB);/*火狐*/   background:-webkit-gradient(linear, 0 0, right 0,from(#E3E9EF), to(#6A88AB));/*谷歌*/">
+        <img src="http://account.inter3i.com/account/static/common/images/bxt_logo.png" alt="">
+        <span style="display:inline-block;float: right;line-height: 65px;margin-right: 20px;">电商价格监测平台</span>
+    </div>
+    <div style="margin:0 auto; padding:20px;border: 1px solid #ccc;border-radius: 10px;">
+        $!{alert.userName}    &nbsp;&nbsp;您好：<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您在${alert.createdOnStr}创建的'$!{alert.taskName}'任务已触发预警，详情如下：<br/>
+        品类：$!{alert.categoryName}<br/>
+        品牌：$!{alert.brand}<br/>
+        款型：$!{alert.models}<br/>
+        适合季节：$!{alert.season}<br/>
+        风格：$!{alert.style}<br/>
+        皮质特征：$!{alert.features}<br/>
+        鞋底材质：$!{alert.material}<br/>
+        预警价格：$!{alert.warningPrice}<br/>
+        当前成交价：$!{alert.stickPrice}<br/>
+        URL：<a href="$!{alert.pageUrl}" target="_blank">$!{alert.pageUrl}</a><br/>
+        <br/><br/>
+        系统邮件，请勿回复!<br/>
+        祝好!<br/>
+        博晓通 团队<br/>
+    </div>
+
+</div>

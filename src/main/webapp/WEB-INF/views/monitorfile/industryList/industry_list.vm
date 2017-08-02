@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/static/pmonitor/css/industry_list.css">
+<script src="/static/plugins/echarts.min.js"></script>
+<script type="text/javascript" src="/static/pmonitor/js/industry_list.js?v=20170706111444"></script>
+
+<div class="commodity" style="">
+##    <a href="javascript:" class="selcategory" onclick="shoes(this)">笔记本电脑</a>
+##    <a href="javascript:" onclick="shoes(this)">冰箱</a>
+
+    #foreach($categorie in $!categories)
+        <a href="javascript:" onclick="shoes(this)">$!{categorie.categoryNameExplain}</a>
+    #end
+    <span style="display: inline-block;float: right;line-height: 44px;font-size: 16px;margin-right: 2%;"><a href="/monitors/taskConfiguration" style="color: #428bca;">添加指标</a></span>
+</div>
+<div class="maincontent" id="industry_content">
+
+</div>

@@ -1,0 +1,31 @@
+<table cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+        <th width="1%" style="visibility:hidden;"></th>
+        <th width="14%"><input type="checkbox" checked="checked" id="task_all" onclick="selectTaskAll()"><label for="task_all">全选</label></th>
+        <th width="40%">商品信息</th>
+        <th width="15%">店铺名称</th>
+        <th width="15%">当前成交价</th>
+        <th width="15%">预警价格</th>
+    </tr>
+    </thead>
+    <tbody>
+        #if($!{taskConfigurationZbs.size()} > 0)
+
+            #foreach($taskConfigurationZb in $!taskConfigurationZbs)
+            <tr>
+                <td style="visibility:hidden;">$!{taskConfigurationZb.id}</td>
+                <td><input type="checkbox" checked="checked" onclick="selAllStatus()"></td>
+                <td title="$!{taskConfigurationZb.productDescription}">$!{taskConfigurationZb.productDescription}</td>
+                <td title="$!{taskConfigurationZb.sellerName}">$!{taskConfigurationZb.sellerName}</td>
+                <td>$!{taskConfigurationZb.stickPrice}</td>
+                <td><input type="text" value="$!{taskConfigurationZb.warningPrice}" class="warnPrice" id="warnPrice"></td>
+            </tr>
+            #end
+        #else
+        <tr>
+            <td colspan="8" style="text-align: center;">暂无数据</td>
+        </tr>
+        #end
+    </tbody>
+</table>

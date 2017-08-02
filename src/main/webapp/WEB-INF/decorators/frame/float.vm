@@ -1,0 +1,28 @@
+#if($!{request.getAttribute('ACCOUNT_SERVER')})
+    #set($ACCOUNT_SERVER = $!{request.getAttribute('ACCOUNT_SERVER')})
+#elseif($ACCOUNT_SERVER)
+    #set($ACCOUNT_SERVER = $!{ACCOUNT_SERVER})
+#end
+
+#if($!{request.getAttribute('APPLICATION_ID')})
+    #set($APPLICATION_ID = $!{request.getAttribute('APPLICATION_ID')})
+#elseif($APPLICATION_ID)
+    #set($APPLICATION_ID = $!{APPLICATION_ID})
+#end
+
+#if($!{request.getAttribute('ACCOUNT_SERVER_FEEDBACK_URL')})
+    #set($ACCOUNT_SERVER_FEEDBACK_URL = $!{request.getAttribute('ACCOUNT_SERVER_FEEDBACK_URL')})
+#elseif($ACCOUNT_SERVER_FEEDBACK_URL)
+    #set($ACCOUNT_SERVER_FEEDBACK_URL = $!{ACCOUNT_SERVER_FEEDBACK_URL})
+#end
+
+
+#if(${APPLICATION_ID} && ${ACCOUNT_SERVER} && ${ACCOUNT_SERVER_FEEDBACK_URL})
+<div class="suspend" style="right:10px;position:fixed;right: 10px;top: 50%;z-index: 998;">
+    <iframe frameborder="0px" id="iframe"></iframe>
+    <script>
+        var url = "${ACCOUNT_SERVER}${ACCOUNT_SERVER_FEEDBACK_URL}?application_id=${APPLICATION_ID}&accountid=$!accountEntity.accountid&url=" + window.location.href;
+        $("#iframe").attr("src",url);
+    </script>
+</div>
+#end

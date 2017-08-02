@@ -1,0 +1,36 @@
+#uniquePageDivId{
+    text-align:center;
+    line-height: 50px;
+}
+#uniquePageDivId>a{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    margin-left:5px;
+}
+#uniquePageDivId  .nowpage {
+    width: 30px;
+    background-color: #f40;
+    color: #fff;
+    border: 1px solid #f40;
+}
+#uniquePageDivId  .pagesnation {
+    width: 30px;
+    border: 1px solid #ccc;
+}
+#uniquePageDivId span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+#uniquePageDivId .pagesStyle{
+    padding: 0px 7px;
+    border: 1px solid #ccc;
+    line-height: 30px;
+}
+#changeToPageNumUnique {
+    width: 40px;
+    line-height: 20px;
+}

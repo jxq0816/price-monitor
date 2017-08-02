@@ -1,0 +1,26 @@
+<script type="text/javascript" src="/static/plugins/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        jQuery.ajax({
+            url : '/account/executeLogin',
+            dataType : 'json',
+            data : $("#cas-index-form").serialize(),
+            success : function(data){
+                if(data.success){
+                    window.location.href = data.url;
+                }else{
+                    alert(data.message);
+                    window.location.href = "/";
+                }
+            },
+            error : function(){
+                alert("登录系统错误");
+            }
+        });
+    });
+</script>
+<form id="cas-index-form">
+    <input type="hidden" name="ticket" value="$!{ticket}" />
+</form>
+登录中,请稍后...

@@ -1,0 +1,18 @@
+<div class="leftNav">
+    <div class="logo">
+        <img src="/static/pmonitor/images/logo.png" alt="" style="margin-top: 20px;cursor: pointer;"  onclick="window.location.href='/'">
+        <span style="border-bottom: 1px solid #3B3B43;width: 70%;display: block;margin: 20px 0;margin-left: 15%;">
+        </span>
+        <span style="margin-bottom: 20px;">价格监测平台</span>
+    </div>
+    <div class="navBar">
+        <ul>
+            <li><img src="/static/pmonitor/images/industry_list.png" class="left_img"><a href="/industryList/getCategoryName">行业榜单</a> <img src="/static/pmonitor/images/right_arrow.png" class="right_arrow" >
+            </li>
+            <li><img src="/static/pmonitor/images/realtime_report2.png"  class="left_img"><a href="/realtime/last/task">实时报告</a><img src="/static/pmonitor/images/right_arrow.png" class="right_arrow">
+            </li>
+            <li><img src="/static/pmonitor/images/task_config2.png"  class="left_img"><a href="/monitors/taskConfiguration">任务配置</a><img src="/static/pmonitor/images/right_arrow.png" class="right_arrow">
+            </li>
+        </ul>
+    </div>
+</div>

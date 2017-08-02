@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="/static/pmonitor/css/addnew_monitor.css">
+<script type="text/javascript" src="/static/pmonitor/js/addnew_monitor.js?v=20170706111444"></script>
+
+<div class="addnew_monitor" id="addnew_monitor">
+    <span>新增监测任务</span> <img src="/static/pmonitor/images/question_mark.png" style="cursor: pointer;" onclick="prompt()">
+    <div id="prompt">
+        <div >
+            <span>1. 建立任务名称并选择所要监测的品类</span><br>
+            <span>2. 选择监测参数，请自左向右，自上向下按顺序选择任务参数，参数为单选（建议：需要监测产品过多时建立多个任务）</span><br>
+            <span>3. 完成监测平台选择及接收账号填写后点击下一步</span><br>
+            <span>4. 选择索要监测的产品，并设定预警价格</span>
+        </div>
+        <span onclick="promptes()">知道了</span>
+    </div>
+    <div class="taskForm">
+        <div class="formContent">
+            <div class="formHead">
+                发布推送信息
+            </div>
+            <div class="formInfo">
+                <form id="formsearch">
+                    <div class="row formLeft">
+                        <div class="col-md-6" style="position: relative;">
+                            <span>任务</span>
+                            <input type="text" placeholder="请填写任务名称" name="task_name" value="" minlength="6" maxlength="20" onblur="checkTaskName()" id="taskName">
+                            <p id="taskTips" style="position: absolute; margin-left: 27%;color: red;"></p>
+                        </div>
+                        <div class="col-md-6">
+                            <span>品类</span>
+                            <select name="category_name" id="category"  onchange="categoryName(this)">
+                                <option value>请选择</option>
+                                #foreach($categorie in $!categories)
+                                    <option value="$!{categorie.categoryNameExplain}">$!{categorie.categoryNameExplain}</option>
+                                #end
+                            </select>
+                        </div>
+                        <div id="task_condition" class="row">
+
+                        </div>
+
+                    </div>
+
+                </form>
+                <div class="nextStep">
+                    <input type="submit" value="下一步" onclick="get_task()">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="taskinfo">
+    <span>监测产品选择</span>
+    <div class="taskForm">
+        <div class="formContent">
+            <div class="formHead">
+                发布推送信息
+                <img src="/static/pmonitor/images/cancel.png" onclick="cancel()">
+            </div>
+            <div class="formInfo" id="formInfo">
+                <div id="formTable" >
+
+                </div>
+                
+                <button class="taskSubmit" style="cursor: pointer;display: block;" onclick="submitTaskInfo(this)">
+                    提交
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

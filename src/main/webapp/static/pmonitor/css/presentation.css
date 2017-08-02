@@ -1,0 +1,547 @@
+/********* CSS-Reset ***********/
+* {
+    font-family: "Microsoft YaHei", verdana, arial, helvetica, sans-serif;
+    padding: 0;margin: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    color: #858585;
+    background-color: #f1f1f1;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, label, form, input, button, textarea, p, section, strong, a {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*此处待添加默认链接颜色*/
+var, em, i {
+    font-style: normal;
+    font-weight: normal;
+}
+
+s {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+button, textarea, select {
+    font-family: "微软雅黑";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: normal;
+    outline: none;
+    border: none;
+}
+
+button {
+    background: none;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+*:link, *:visited, *:hover, *:active {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.fix {
+    *zoom: 1;
+}
+
+.fix:after {
+    display: block;
+    content: "clear";
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.none {
+    display: none;
+}
+
+.blue {
+    color: #53a1f5 !important;
+}
+
+.red {
+    color: #e4393c !important;
+}
+
+.yellow {
+    color: #f3b657 !important;
+}
+
+.whiteDiv {
+    width: 100%;
+    background-color: #ffffff;
+    margin: 18px auto 0;
+    padding: 25px 22px;
+    -moz-box-shadow: 0 0 8px #e8e8e8; /* 老的 Firefox */
+    -moz-webkit-shadow: 0 0 8px #e8e8e8;
+    -moz-ms-shadow: 0 0 8px #e8e8e8;
+    box-shadow: 0 0 8px #e8e8e8;
+    position: relative;
+}
+
+.whiteDiv h2 {
+    text-align: center;
+    background-color: #efefef;
+    color: #666666;
+    font-size: 14px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #e5e5e5;
+    border-bottom: none;
+}
+
+.whiteDiv table {
+    border: 1px solid #e5e5e5;
+    width: 100%;
+    text-align: center;
+    border-bottom: none;
+}
+
+.whiteDiv table th {
+    color: #6b7074;
+    font-weight: normal;
+    height: 40px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.whiteDiv table td {
+    height: 40px;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 8px 0 0 0;
+    line-height: 26px;
+}
+
+.product-description {
+    width: 30% !important;
+}
+
+.whiteDiv table tr {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.whiteDiv h3 {
+    color: #333333;
+    font-size: 16px;
+    padding: 0 0 25px 0;
+}
+
+.selectdiv {
+    height: 32px;
+    width: 150px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.selectdiv .left {
+    width: 122px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #E5E5E5;
+    background-color: #F5F5F5;
+    padding: 0 0 0 10px;
+}
+
+.selectdiv span.right {
+    width: 28px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #388ade;
+    background-color: #388ade;
+    color: #ffffff;
+    text-align: center;
+}
+
+.selectdiv span.right .caret {
+    font-size: 16px;
+}
+
+.category {
+    height: 400px;
+    /*width: 825px;*/
+    position: absolute;
+    top: 58px;
+    left: 22px;
+    -moz-box-shadow: 0 0 8px #e8e8e8; /* 老的 Firefox */
+    -moz-webkit-shadow: 0 0 8px #e8e8e8;
+    -moz-ms-shadow: 0 0 8px #e8e8e8;
+    box-shadow: 0 0 8px #e8e8e8;
+    z-index: 9;
+}
+
+.category_left {
+    width: 150px;
+    background-color: #f7f7f7;
+    height: 100%;
+}
+
+.category_left li, .category_left h4 {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    font-size: 13px;
+    color: #555555;
+    padding: 0 0 0 10px;
+}
+.category_left li{cursor: pointer;}
+
+.currentli {
+    background-color: #ffffff;
+}
+
+.allcategory {
+    color: #e4393c;
+    width: 66px;
+    height: 22px;
+    border: 1px solid #e4393c;
+    line-height: 22px;
+    font-size: 12px;
+    float: left;
+    text-align: center;
+}
+
+.category_right {
+    padding: 10px 0 0 10px;
+    width: 675px;
+    background-color: #ffffff;
+}
+
+.category_right .top {
+    overflow: hidden;
+    height: 30px;
+    width: 100%;
+}
+
+#letter {
+    float: left;
+    padding: 0 0 0 10px;
+    color: #575ab4;
+    height: 22px;
+    line-height: 22px;
+}
+
+#letter i {
+    padding: 0 14px 0 0;
+    color: #575ab4;
+}
+
+.category_right .bottom {
+    height: 360px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.category_right .bottom p {
+    overflow: hidden;
+    width: 100%;
+    padding: 0 0 10px 0;
+}
+
+.category_right .bottom p span {
+    float: left;
+    overflow: hidden;
+    padding: 0 10px;
+    border-right: 1px solid #eaeaea;
+    cursor: pointer;
+}
+
+/*.category_right .bottom p span:hover{color:#e4393c;}*/
+
+.category_right .bottom p:last-child {
+    padding: 10px 0 0 0;
+    border-bottom: none;
+}
+
+.btn-sm {
+    border-radius: 0;
+    margin-bottom: 10px;
+}
+
+.btn-sm span {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);;
+}
+
+.tltleDiv {
+    width: 100%;
+    height: 30px;
+}
+
+.dropdown-menu {
+    left: inherit !important;
+    right: 0 !important;
+}
+
+#dropdownMenu1 {
+    padding: 0 20px !important;
+    width: 160px;
+}
+
+.btn .caret {
+    float: right !important;
+    margin: 8px 0 0 0 !important;
+}
+
+#checkbox {
+    display: inline-block !important;
+    width: auto !important;
+}
+
+/*#uniquePageDivId a {
+    border: 1px solid #ededed;
+    padding: 5px 10px;
+    color: #3d3d3d
+}
+
+#uniquePageDivId a:hover {
+    text-decoration: none !important;
+}
+
+.currrenta {
+    color: white !important;
+    background-color: #ff4400
+}
+
+#uniquePageDivId input {
+    border: 1px solid #ededed;
+}
+
+#uniquePageDivId {
+    padding: 25px 0 0 0;
+}
+
+#confirmbtn {
+    padding: 4px !important;
+}
+
+.currrentaray {
+    color: #cccccc;
+    border: 1px solid #cccccc;
+}
+
+.overDiv {
+    overflow: hidden;
+    width: 95%;
+    margin: 0 auto;
+}*/
+
+.topdiv a {
+    color: #707070;
+    font-size: 12px;
+}
+
+.topdiv {
+    border-bottom: 1px solid #e4eaec;
+}
+
+.mytable {
+    border: none !important;
+    background-color: #f7f7f7
+}
+
+.mytable tr {
+    border: none !important;
+}
+
+.mytable td {
+    border: none !important;
+}
+
+.chooseul {
+    overflow: hidden;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-bottom:none;
+}
+
+.chooseul li {
+    width: 50%;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.chooseul li.chooseli {
+    background-color: #00A0E9;
+    color: #ffffff;
+}
+/*index*/
+.banner{width: 100%;
+        height: 489px;
+        background: url("../images/banner_02.jpg") no-repeat center;}
+
+.main_in {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden
+}
+.banner .main_in {padding: 0 0 0 38px;}
+.banner .main_in p{padding: 106px 0 48px 0;
+                   font-size: 22px;
+                   color: #333333;}
+.carousel{overflow: hidden;height:50px;min-height:50px;line-height: 50px}
+.carousel li{height: 50px;}
+.carousel li,.banner .main_in h2{font-size: 42px;
+             font-family: "Microsoft YaHei";
+             color: #3b8ade;
+             font-weight: bold;}
+.banner .main_in h2{padding: 25px 0 46px ;}
+.btn-warning{display:block;color:#ffffff;text-align:center;width: 134px;line-height:34px;padding:0;background-color: #f67f00;font-size:17px;}
+.nodata{background-color: #f5f5f5;
+    font-size: 18px;
+    text-align: center;
+    line-height: 50px;}
+.centerDiv{width: 100%;
+           background-color: #ffffff;}
+.presentationdata{padding: 20px 0;}
+.presentationdata ul{overflow: hidden;}
+.presentationdata ul li{float: left;
+                        width: 118px;
+                        height: 145px;
+                        border: 1px solid #b0b0b0;
+                        padding: 10px 0 0 ;
+                        margin-left: 35px;}
+.presentationdata ul li img{display: block;
+                            margin: 0 auto;
+                            }
+.presentationdata ul li p{
+    font-size:14px;
+    color: #666666;
+    text-align: center;
+    padding: 20px 0 0 0;
+}
+.presentationdata ul li h3{
+    font-size:18px;
+    text-align: center;
+   line-height: 50px;
+    font-weight: bold;
+}
+.otherproducts{padding: 25px 0;}
+.othetimg{display: block;margin: 20px auto 40px;}
+
+.other img {
+    margin: 0 70px;
+    cursor: pointer;
+}
+.other{width: 925px;
+    margin: 0 auto;}
+.asregards{padding: 30px 0;}
+.asregards .main_in h4{
+    height: 60px;
+    width: 200px;
+    line-height: 60px;
+    margin: 0 auto 20px;
+    text-align: center;
+    border-bottom: 2px solid #086fd0;
+  }
+
+.asregards .main_in p {
+    padding: 0 0 30px 10px;
+                      color: #666666;
+                      font-size: 12px;
+                      line-height: 22px;}
+.partner img{margin:20px 0 0 23px;}
+
+.relation {
+    background-color: #383838;
+    padding: 40px 0;
+}
+
+.relation_left {
+    float: left;
+}
+
+.relation_left h2 {
+    color: white;
+    font-size: 22px;
+    height: 28px;
+    background: url("../images/relation_18.jpg") no-repeat left center;
+    padding: 0 0 0 38px;
+    line-height: 28px;
+}
+
+.relation_left p {
+    color: #ffffff;
+    font-size: 16px;
+    padding: 30px 0;
+}
+
+.relation_left button {
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    width: 124px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #f67f00;
+    border-radius: 20px;
+}
+
+.relation_right {
+    float: right;
+    overflow: hidden;
+}
+
+.relation_right ul {
+    overflow: hidden;
+}
+
+.relation_right li {
+    float: left;
+    padding-right: 40px;
+}
+
+.relation_right li h5 {
+    color: #ffffff;
+    height: 30px;
+}
+
+.relation_right li img {
+    width: 130px;
+}
+
+.relation .main_in {
+    padding: 0 60px;
+}
+.caret{
+      cursor: pointer;
+      border-top: 6px dashed;
+      border-right: 6px solid transparent;
+     border-left: 6px solid transparent;
+}
+.other .nohref{cursor:default }
+
+
+

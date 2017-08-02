@@ -1,0 +1,135 @@
+<body>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/pmonitor/css/presentation.css">
+    <script src="/static/pmonitor/js/presentation.js?v=20170706111444"></script>
+    <script src="/static/plugins/echarts.min.js"></script>
+    <script src="/static/pmonitor/js/product-details.js?v=20170706111444"></script>
+</head>
+<body>
+<form action="/realtime/task"  method='post' id="formId3">
+    <input type="hidden" name="taskId" value="$!{taskId}" />
+    <input type="hidden" name="categoryName" value="$!{categoryName}"/>
+    <input type="hidden" name="pageNo" value="$!{pageNo}"/>
+    <input type="hidden" name="orderParam" value="$!{orderParam}"/>
+</form>
+<input type="hidden" value='$!{priceTrend}' id="chartsdataId"/>
+<form action='/realtime/task/child/detail/more' method='post' id="formId1">
+    <input type="hidden" name="taskId" value="$!{taskId}" />
+    <input type="hidden" name="categoryName" value="$!{categoryName}"/>
+    <input type="hidden" name="childTaskId" value="$!{childTaskId}"/>
+    <input type="hidden" name="pageNo" value="$!{pageNo}"/>
+    <input type="hidden" name="orderParam" value="$!{orderParam}"/>
+    <input type="hidden" name="moreType" value="" id="moreType"/>
+</form>
+<div class="templatemo-content-wrapper">
+<div class="whiteDiv" style="width: 100%">
+    <button type="button" class=" btn btn-default btn-sm" onclick="$('#formId3').submit()">
+        <span class="glyphicon glyphicon-share-alt"></span>
+        返回
+    </button>
+    <h2>产品信息</h2>
+<table class="tableborder" cellspacing="0" cellpadding="0" id="removetd">
+            <thead>
+            <tr>
+                <th>品牌</th>
+                <th class="product-description">产品描述</th>
+                <th>平台</th>
+                <th>店铺名称</th>
+                <th>URL</th>
+                <th>预警底价</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td> ${childTask.brand}</td>
+            <td> ${childTask.product_description}</td>
+            <td> ${childTask.platform}</td>
+            <td> ${childTask.seller_name}</td>
+            <td>
+                <a href="${childTask.page_url}" target=" _blank">点击前往</a>
+            </td>
+            <td> ${childTask.warning_price}</td>
+
+            </tr>
+            </tbody>
+        </table>
+
+</div>
+<div class="whiteDiv" style="width: 100%;">
+    <h3>
+        <span class="glyphicon glyphicon-stats blue"></span>
+        价格走势
+    </h3>
+    <div id="line" style="width: 100%;height:400px;"></div>
+</div>
+<div class="overDiv">
+    <div class="whiteDiv left" style="width: 49%;">
+        <div class="tltleDiv topdiv">
+            <h3 class="left">
+                <span class="glyphicon glyphicon-warning-sign blue"></span>
+                预警列表
+            </h3>
+            <a href="javascript:;" class="right morebtn" data-num="0">更多</a>
+        </div>
+        <table class="mytable">
+            <thead>
+            <tr>
+                <th>活动内容</th>
+                <th>报警时间</th>
+                <th>报警价格</th>
+            </tr>
+            </thead>
+            <tbody>
+                    #if($!{warningContents.size()} > 0)
+                        #foreach($warningContent in $!warningContents)
+            <tr>
+                            <td>$!{warningContent.promotionlnfos}</td>
+                            <td class="red">$!DateTool.format("yyyy.MM.dd",${warningContent.createdOn})</td>
+                            <td class="red">$!{warningContent.price}</td>
+            </tr>
+                        #end
+                    #else
+            <tr>
+                        <td colspan="3" style="text-align: center;">暂无数据</td>
+            </tr>
+                    #end
+            </tbody>
+        </table>
+    </div>
+    <div class="whiteDiv right" style="width: 49%;">
+        <div class="tltleDiv topdiv">
+            <h3 class="left">
+                <span class="glyphicon glyphicon-gift blue"></span>
+                活动列表
+            </h3>
+            <a href="javascript:;" class="right morebtn" data-num="1" >更多</a>
+        </div>
+        <table class="mytable">
+            <thead>
+            <tr>
+                <th>活动内容</th>
+                <th>活动时间</th>
+                <th>成交价格</th>
+            </tr>
+            </thead>
+            <tbody>
+                    #if($!{activeContents.size()} > 0)
+                        #foreach($activeContent in $!activeContents)
+            <tr>
+                            <td>$!{activeContent.promotionlnfos}</td>
+                            <td class="red">$!DateTool.format("yyyy.MM.dd",${activeContent.createdOn})</td>
+                            <td class="red">$!{activeContent.price}</td>
+            </tr>
+                        #end
+                    #else
+            <tr>
+                        <td colspan="3" style="text-align: center;">暂无数据</td>
+            </tr>
+                    #end
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</body>

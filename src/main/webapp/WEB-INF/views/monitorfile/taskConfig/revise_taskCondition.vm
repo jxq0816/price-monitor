@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="/static/pmonitor/css/addnew_monitor.css">
+<script type="text/javascript" src="/static/pmonitor/js/addnew_monitor.js?v=20170706111444"></script>
+<input type="hidden" value="$!{taskConfigurationId}">
+<div class="addnew_monitor" id="addnew_monitor">
+    <span>修改监测任务</span> <img src="/static/pmonitor/images/question_mark.png"
+                             style="cursor: pointer;" onclick="prompt()">
+    <div id="prompt">
+        <div>
+            <span>1. 只能修改任务名称和接受账号</span><br>
+            <span>2. 点击“下一步”选择索要监测的产品，并设定预警价格</span>
+        </div>
+        <span onclick="promptes()">知道了</span>
+    </div>
+    <div class="taskForm">
+        <div class="formContent">
+            <div class="formHead">
+                发布推送信息
+            </div>
+            <div class="formInfo">
+                <form id="formsearch">
+                    <div class="row formLeft">
+                        #foreach($taskUpdate in $!taskUpdates)
+                            #if($!{taskUpdate.englishName} == "task_name")
+                                <div class="col-md-6" style="position: relative;">
+                                    <span>$!{taskUpdate.chineseName}</span>
+                                    <input type="text" placeholder="请填写任务名称" name="$!{taskUpdate.englishName}"maxlength="20" value="$!{taskUpdate.value}"
+                                           onblur="checkTaskName('$!{taskConfigurationId}')" id="taskName">
+                                    <p id="taskTips"
+                                       style="position: absolute; margin-left: 27%;color: red;"></p>
+                                </div>
+                                #elseif( $!{taskUpdate.englishName} != "platform" && $!{taskUpdate.englishName} != "email")
+                                    <div class="col-md-6">
+                                        <span>$!{taskUpdate.chineseName}</span>
+                                        <select name="$!{taskUpdate.englishName}" id="category"  disabled="disabled" style="background-color: #eee;">
+                                            <option value="$!{taskUpdate.value}">$!{taskUpdate.value}</option>
+                                        </select>
+                                    </div>
+                                #elseif($!{taskUpdate.englishName} == "platform" )
+                                    <div class="col-md-6">
+                                        <span>$!{taskUpdate.chineseName}</span>
+                                        <div class="supplierName" id="$!{taskUpdate.englishName}">
+                                            #set($taskPlatform = $!{taskUpdate.value})
+                                            #foreach($platform in $taskPlatform.split(","))
+                                                <input type="checkbox" checked="checked" disabled="disabled" name="$platform">$platform
+                                            #end
+                                        </div>
+                                    </div>
+                                #elseif($!{taskUpdate.englishName} == "email" )
+                                    <div class="col-md-6">
+                                        <span>$!{taskUpdate.chineseName}</span>
+                                        <input type="text" placeholder="请填写邮件地址" name="$!{taskUpdate.englishName}" maxlength="30" value="$!{taskUpdate.value}" onblur="taskEmail()" id="taskemail">
+                                        <p id="emailTips" style="position: absolute; margin-left: 27%;color: red;"></p>
+                                    </div>
+                            #end
+                        #end
+                    </div>
+                </form>
+                <div class="nextStep">
+                    <input type="submit" value="下一步" onclick="revise_task('$!{taskConfigurationId}')">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="taskinfo">
+    <span>监测产品选择</span>
+    <div class="taskForm">
+        <div class="formContent">
+            <div class="formHead">
+                发布推送信息
+                <img src="/static/pmonitor/images/cancel.png" onclick="cancel()">
+            </div>
+            <div class="formInfo" id="formInfo">
+                <div id="formTable">
+
+                </div>
+
+                <div class="taskSubmit" style="cursor: pointer;" onclick="submitReviseInfo('$!{taskConfigurationId}')">
+                    提交
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

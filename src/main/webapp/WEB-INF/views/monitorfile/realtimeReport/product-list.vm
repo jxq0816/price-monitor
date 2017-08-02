@@ -1,0 +1,66 @@
+<body>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/pmonitor/css/presentation.css">
+    <script src="/static/pmonitor/js/presentation.js?v=20170706111444"></script>
+    <script src="/static/pmonitor/js/product_list.js?v=20170706111444"></script>
+</head>
+<body>
+<input type="hidden" value="$!{moreType}" id="moreType"/>
+<form action='/realtime/task/child/detail' method='post' id="formId2">
+    <input type="hidden" name="taskId" value="$!{taskId}" />
+    <input type="hidden" name="categoryName" value="$!{categoryName}"/>
+    <input type="hidden" name="childTaskId" value="$!{childTask.id}" id="childTaskId"/>
+    <input type="hidden" name="pageNo" value="$!{pageNo}"/>
+    <input type="hidden" name="orderParam" value="$!{orderParam}"/>
+</form>
+
+    <div class="whiteDiv">
+        <button type="button" class=" btn btn-default btn-sm" onclick="$('#formId2').submit()">
+            <span class="glyphicon glyphicon-share-alt"></span>
+            返回
+        </button>
+        <h2>产品信息</h2>
+        <table class="tableborder" cellspacing="0" cellpadding="0" >
+            <thead>
+            <tr>
+                <th>品牌</th>
+                <th class="product-description">产品描述</th>
+                <th>平台</th>
+                <th>店铺名称</th>
+                <th>URL</th>
+                <th>预警底价</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> ${childTask.brand}</td>
+                <td> ${childTask.product_description}</td>
+                <td> ${childTask.platform}</td>
+                <td> ${childTask.seller_name}</td>
+                <td>
+                    <a href="${childTask.page_url}" target=" _blank">点击前往</a>
+                </td>
+                <td> ${childTask.warning_price}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="whiteDiv">
+        <h3 >
+            <span class="glyphicon glyphicon-warning-sign blue"></span>
+            预警及活动列表
+        </h3>
+        <div class="tltleDiv">
+            <ul class="chooseul left" id="chooseul">
+                <li class="chooseli" data-moreType="0">预警列表</li>
+                <li data-moreType="1">活动列表</li>
+            </ul>
+        </div>
+        <div id="table_f">
+
+
+        </div>
+    </div>
+</body>

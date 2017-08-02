@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>电商价格监测平台</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="http://account.inter3i.com/static/service/images/ico/inter3i.ico?v=20170706111444" mce_href="favicon.ico" rel="bookmark" type="image/x-icon" />
+    <link href="http://account.inter3i.com/static/service/images/ico/inter3i.ico?v=20170706111444" mce_href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="http://account.inter3i.com/static/service/images/ico/inter3i.ico?v=20170706111444" mce_href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/plugins/css/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="/static/plugins/css/jquery-confirm.css" type="text/css" />
+    <link rel="stylesheet" href="/static/plugins/css/templatemo_main.css">
+    <link rel="stylesheet" href="/static/pmonitor/css/pagination.css">
+    <link rel="stylesheet" href="/static/pmonitor/css/presentation.css">
+    <script type="text/javascript" src="/static/plugins/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/pmonitor/js/presentation.js?v=20170706111444"></script>
+    <script type="text/javascript" src="/static/plugins/jquery-ui.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/jquery-confirm.js"></script>
+    <script type="text/javascript" src="/static/plugins/common.js"></script>
+    <script type="text/javascript" src="/static/plugins/baidu-statistics.js?v=20170531160451"></script>
+    <script type="text/javascript" src="/static/account/account.js?v=20170706111444"></script>
+    <script type="text/javascript" src="/static/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/static/plugins/third_part_statistics.js"></script>
+    $head
+</head>
+<body>
+#parse("/WEB-INF/decorators/frame/heads.vm")
+#parse("/WEB-INF/decorators/frame/navleft.vm")
+<div id="main-wrapper">
+    <div class="main" style="">
+        <div class="comment" style="">
+                $body
+        </div>
+    </div>
+#parse("/WEB-INF/decorators/frame/bottom.vm")
+</body>
+</html>

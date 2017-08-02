@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+<!-- 命名的配置 -->
+<named-config name="mysqlServer">
+
+	<property name="driverClass">com.mysql.jdbc.Driver</property>
+
+   <!-- <property name="jdbcUrl">jdbc:mysql://rm-bp1fr3cdd78312d83.mysql.rds.aliyuncs.com:3306/price_monitor?characterEncoding=utf-8&amp;useSSL=true&amp;autoReconnect=true&amp;failOverReadOnly=false </property>
+	<property name="user">root</property>
+	<property name="password">Inter3i#com</property>-->
+
+	<property name="jdbcUrl">jdbc:mysql://192.168.0.12:3306/price_monitor?characterEncoding=utf-8&amp;useSSL=true</property>
+	<property name="user">hive</property>
+	<property name="password">hive</property>
+	<!--
+        <property name="jdbcUrl">jdbc:mysql://139.129.135.123:3306/price_monitor?characterEncoding=utf-8&amp;useSSL=true</property>
+        <property name="user">root</property>
+        <property name="password">zhou30818</property>
+        -->
+	<property name="acquireIncrement">5</property><!-- 如果池中数据连接不够时一次增长多少个 -->
+	<property name="initialPoolSize">10</property>
+	<property name="minPoolSize">10</property>
+	<property name="maxPoolSize">100</property>
+	<property name="maxStatements">0</property>
+	<property name="maxStatementsPerConnection">5</property>
+</named-config>
+</c3p0-config>

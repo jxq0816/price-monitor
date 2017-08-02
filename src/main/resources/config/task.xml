@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+
+    <bean id="taskExecutor"
+          class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="3"/>
+        <property name="keepAliveSeconds" value="200"/>
+        <property name="maxPoolSize" value="5"/>
+        <property name="queueCapacity" value="25"/>
+    </bean>
+
+
+    <!-- 开启这个配置，spring才能识别@Scheduled注解-->
+    <task:scheduler id="share-scheduler" pool-size="10"/>
+    <task:executor id="share-executor" pool-size="5"/>
+    <task:annotation-driven scheduler="share-scheduler" executor="share-executor" mode="proxy"/>
+    <task:scheduled-tasks scheduler="share-scheduler">
+        <!--价格趋势定时job每天1点开始跑-->
+        <task:scheduled ref="taskScheduler" method="priceTrend" cron="0 0 1 * * ?"/>
+        <!--价格变化排名定时job-->
+        <task:scheduled ref="taskScheduler" method="priceChangeRank" cron="0 0 1 * * ?"/>
+        <!--品牌均价变化定时job-->
+        <task:scheduled ref="taskScheduler" method="brandAvgChange" cron="0 0 1 * * ?"/>
+        <!--定时计算首页面显示的的数据job-->
+        <task:scheduled ref="taskScheduler" method="indexData" cron="0 0 1 * * ?"/>
+    </task:scheduled-tasks>
+
+</beans>

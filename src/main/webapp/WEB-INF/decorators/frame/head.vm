@@ -1,0 +1,67 @@
+#if($!{request.getAttribute('account')})
+    #set($accountEntity = $!{request.getAttribute('account')})
+#elseif($account)
+    #set($accountEntity = $!{account})
+#end
+
+#if(!$accountEntity)
+    <script>
+        casLogin();
+    </script>
+#end
+
+<div id="main-wrapper">
+    <div role="navigation">
+    #if(!$accountEntity)
+        <div class="userNav" style="width: 100%;" onclick="show_scenic(event)">
+        <img src="/static/plugins/css/images/logo.png" style="cursor: pointer;height: 59px;float: left;margin-left: 20px;" onclick="window.location.href='/'">
+        <span style="float: left; margin-left: -105px; margin-top: 6px;">电商价格监测平台</span>
+    #else
+        <div class="userNav" onclick="show_scenic(event)" style="width: 100%;">
+        <img src="/static/plugins/css/images/logo.png" style="cursor: pointer;height: 59px;float: left;margin-left: 20px;" onclick="window.location.href='/'">
+        <span style="float: left; margin-left: -105px; margin-top: 6px;">电商价格监测平台</span>
+
+        <div class="login">
+            <img src="/static/pmonitor/images/login.png"  onclick="loginOut()">
+        </div>
+    #end
+
+
+    #if($accountEntity)
+        <div class="userInfo">
+            <!--<div style="width: 40px;height: 40px;border-radius: 20px;display: inline-block;background-color: #6DCFF6;">-->
+            <!--<img src="images/logo.png" alt="">-->
+            <!--</div>-->
+            <span style="display: inline-block;padding: 0;margin: 0;margin-left: 23px;">您好，$!{accountEntity.nickname}</span>
+            <img src="/static/pmonitor/images/bottom_arrow.png"   onclick="userInfo()"  style="cursor: pointer" >
+            <span style="display: inline-block;cursor: pointer;padding: 0;margin: 0;margin-right: 23px;" onclick=" window.open('/industryList/getCategoryName','_self')">Demo</span>
+        </div>
+    #else
+        <div class="userInfo" style="margin-right: 25px;">
+            <!--<div style="width: 40px;height: 40px;border-radius: 20px;display: inline-block;background-color: #6DCFF6;">-->
+            <!--<img src="images/logo.png" alt="">-->
+            <!--</div>-->
+            <span style="display: inline-block;cursor: pointer;padding: 0;margin: 0;margin-left: 23px;" onclick="gotoLogin()">登录</span>
+##            <span style="display: inline-block;cursor: pointer;padding: 0;margin: 0;margin-left: 23px;" onclick="gotoRegister()">注册</span>
+            <span style="display: inline-block;cursor: pointer;padding: 0;margin: 0;margin-left: 23px;" onclick="gotoLogin()">Demo</span>
+
+        ##            <img src="/static/pmonitor/images/bottom_arrow.png">
+        </div>
+    #end
+
+            <div class="moreInfo"  style="cursor: pointer" onclick="moreInfo()" >
+                <img src="/static/pmonitor/images/menu.png" >
+            </div>
+            <div class="menu menus" style="">
+                <a href="http://charts.inter3i.com" target="_blank" style=""><span style="display: inline-block;text-align: center;width: 42px;height: 42px;"><img src="/static/pmonitor/images/travel.png" ></span><span>旅游监测</span></a>
+##                <a href="javascript:" style=""><img src="/static/pmonitor/images/price.png" style="width: 42px;"><span>电商价格监测</span></a>
+                <a href="http://wxpta.inter3i.com/analysis/projects"  target="_blank" style="border-bottom: 0;"><img src="/static/pmonitor/images/opinion.png"><span>微信H5传播轨迹</span></a>
+            </div>
+            <div class="userinfo userinfos" style="">
+                <a href="http://account.inter3i.com/personal/view/$accountEntity.accountid" target="_blank" style=""><img src="/static/pmonitor/images/basic_data.png" style="width: 18px;"><span style="display: inline-block;margin-left: 10px;">基本资料</span></a>
+##                <a href="javascript:" style=""><img src="/static/pmonitor/images/my_order.png"><span>我的订单</span></a>
+##                <a href="javascript:" style="border-bottom: 0;"><img src="/static/pmonitor/images/my_amount.png"><span>我的金额</span></a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,184 @@
+.addnew_monitor,#taskinfo {
+    background-color: #FFF;
+    position: relative;
+}
+.col-md-6{
+    height: 34px;
+}
+.addnew_monitor > span,#taskinfo>span {
+    display: inline-block;
+    margin: 35px 4%;
+    margin-right: 1%;
+    font-size: 16px;
+}
+.taskForm {
+    width: 100%;
+    padding-left: 6%;
+    padding-right: 4%;
+    padding-bottom: 60px;
+}
+.formContent{
+    width: 100%;
+    border: 1px solid #666;
+}
+.formHead {
+    width: 100%;
+    line-height: 57px;
+    border-bottom: 1px solid #666;
+    padding-left: 4%;
+    font-size: 12px;
+}
+.formInfo {
+    width: 92%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.formLeft{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-bottom: 1px solid #666;
+    padding-bottom: 50px;
+
+}
+.formLeft div{
+    margin-top: 18px;
+}
+
+.formLeft div span{
+    display: inline-block;
+    width: 20%;
+    margin-left: 6%;
+}
+.formLeft div select{
+    width: 65%;
+    height: 34px;
+    padding:5px 0;
+    font-size: 14px;
+    border: 1px solid #999;
+}
+.formLeft div input{
+    width: 65%;
+    height: 34px;
+    border: 1px solid #999;
+}
+#task_condition{
+    padding: 0;
+    margin: 0;
+}
+.formLeft .supplierName {
+    display: inline-block;
+    width: 65%;
+    line-height: 34px;
+    margin-top: 0;
+}
+.formLeft .supplierName > input {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    position: relative;
+    top: 3px;
+}
+.formLeft .supplierName > input:nth-child(1){
+    margin-left: 0;
+}
+.nextStep {
+    width: 155px;
+    line-height: 40px;
+    margin: 45px auto;
+    text-align: center;
+}
+.nextStep > input {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: #3789DD;
+    color: #FFF;
+}
+
+#prompt {
+    width: 265px;
+    position: absolute;
+    top:30px;
+    left:180px;
+    background-color: #fff;
+    font-size: 13px;
+    display: none;
+    color: #888;
+    z-index: 2;
+}
+#prompt > div{
+    width: 100%;
+    padding: 5px 5px;
+    border: 1px solid yellow;
+}
+#prompt > span{
+    display: inline-block;
+    float: right;
+    margin-top: 5px;
+    border: 1px solid yellow;
+    cursor: pointer;
+    width: 60px;
+    line-height: 24px;
+    text-align: center;
+}
+
+#taskinfo{
+    display: none;
+}
+.formHead>img{
+    float: right;
+    margin: 20px 20px  0 0;
+    cursor: pointer;
+}
+.formInfo {
+    width: 100%;
+}
+
+.formInfo table{
+    width: 100%;
+    table-layout:fixed;
+    font-size: 14px;
+}
+.formInfo table th{
+    border-bottom: 1px solid #bcbcbc;
+    padding: 0 10px;
+    background-color: #F5F5F5;
+    line-height: 46px;
+}
+
+.formInfo table td{
+    padding: 0 10px;
+    line-height: 68px;
+    border-bottom: 1px solid #bcbcbc;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.formInfo table  input{
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top:3px;
+}
+.formInfo table td .warnPrice{
+    width: 75px;
+    height: 34px;
+    color: red;
+    top:0;
+    line-height: 0;
+}
+
+.taskSubmit {
+    width: 155px;
+    line-height: 40px;
+    color: #FFF;
+    background-color: #3789DD;
+    margin: 30px auto;
+    text-align: center;
+}
+
+#warnPrice{
+    border: 1px solid #666;
+}

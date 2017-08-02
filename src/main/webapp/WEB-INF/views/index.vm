@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>电商价格监测平台</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="http://account.inter3i.com/static/service/images/ico/inter3i.ico?v=20170706111444" mce_href="favicon.ico" rel="bookmark" type="image/x-icon" />
+    <link href="http://account.inter3i.com/static/service/images/ico/inter3i.ico?v=20170706111444" mce_href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="http://account.inter3i.com/static/service/images/ico/inter3i.ico?v=20170706111444" mce_href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/plugins/css/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="/static/plugins/css/jquery-confirm.css" type="text/css" />
+    <link rel="stylesheet" href="/static/plugins/css/templatemo_main.css">
+    <link rel="stylesheet" href="/static/pmonitor/css/pagination.css">
+    <link rel="stylesheet" href="/static/pmonitor/css/presentation.css">
+    <script type="text/javascript" src="/static/plugins/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/pmonitor/js/presentation.js?v=20170706111444"></script>
+    <script type="text/javascript" src="/static/plugins/jquery-ui.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/plugins/jquery-confirm.js"></script>
+    <script type="text/javascript" src="/static/plugins/common.js"></script>
+    <script type="text/javascript" src="/static/plugins/baidu-statistics.js?v=20170531160451"></script>
+    <script type="text/javascript" src="/static/account/account.js?v=20170706111444"></script>
+    <script type="text/javascript" src="/static/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/static/plugins/third_part_statistics.js"></script>
+</head>
+<body>
+#parse("../decorators/frame/head.vm")
+<div class="banner">
+    <div class="main_in">
+        <p>价格监测平台，电商最终成交价监测和预警系统</p>
+        <div id="scrollDiv" class="carousel">
+            <ul>
+                <Li>渠道价格预警</Li>
+                <Li>价格趋势洞察</Li>
+                <Li>品牌舆情监测</Li>
+                <Li>促销定价制定</Li>
+            </ul>
+        </div>
+        <h2>你需要基于最终成交价</h2>
+    #if($accountEntity)
+        <a href="/industryList/getCategoryName" class="btn btn-warning">免费体验</a>
+    #else
+        <a href="javascript:gotoLogin()" class="btn btn-warning">免费体验</a>
+    #end
+    </div>
+</div>
+<div class="centerDiv">
+    <div class="main_in">
+        <div class="presentationdata">
+            <ul>
+                <Li>
+                    <img src="/static/pmonitor/images/icon_17.jpg" alt="">
+                    <p>监测产品</p>
+                    <h3 class="blue">$!{productNumber}</h3>
+                </Li>
+                <Li>
+                    <img src="/static/pmonitor/images/icon_05.jpg" alt="">
+                    <p>预警次数</p>
+                    <h3 class="blue">$!{warningNumber}</h3>
+                </Li>
+                <Li>
+                    <img src="/static/pmonitor/images/icon_08.jpg" alt="">
+                    <p>注册用户</p>
+                    <h3 class="blue">$!{userNumber}</h3>
+                </Li>
+                <Li>
+                    <img src="/static/pmonitor/images/icon_10.jpg" alt="">
+                    <p>监测品牌</p>
+                    <h3 class="blue">40</h3>
+                </Li>
+                <Li>
+                    <img src="/static/pmonitor/images/icon_12.jpg" alt="">
+                    <p>监测活动</p>
+                    <h3 class="blue">$!{activeNumber}</h3>
+                </Li>
+                <Li>
+                    <img src="/static/pmonitor/images/icon_14.jpg" alt="">
+                    <p>电商平台</p>
+                    <h3 class="blue">4</h3>
+                </Li>
+            </ul>
+        </div>
+        <div class="otherproducts">
+            <img src="/static/pmonitor/images/other_03.jpg" alt="" class="othetimg">
+            <div class="other">
+                <img src="/static/pmonitor/images/sign_13.jpg" alt="" onclick="linkurl('http://charts.inter3i.com')">
+                <img src="/static/pmonitor/images/sign_15.jpg" alt="" onclick="linkurl('http://wxpta.inter3i.com')">
+                <img src="/static/pmonitor/images/sign_17.jpg" alt="" class="nohref">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="asregards">
+    <div class="main_in">
+        <h4>关于博晓通公司</h4>
+        <p>
+            博晓通是一家技术导向型社交和电商大数据分析服务商，专注于为用户和合作伙伴降低处理海量社交和电商数据的投入和技术风险，提高数据资产价值，提升大数据产业链的效率。目前，博晓通已经服务了150多家企业客户，包括西门子中国、博西家电、英特尔、大众、长安、华为、三星、罗兰贝格、尼尔森、益普索、Clarks、三福服饰、中青旅等，覆盖3C家电、汽车、旅游、时尚、咨询等行业。
+        </p>
+        <div class="partner">
+            <img src="/static/pmonitor/images/logo_13.jpg" alt="">
+            <img src="/static/pmonitor/images/logo_15.jpg" alt="">
+            <img src="/static/pmonitor/images/logo_17.jpg" alt="">
+            <img src="/static/pmonitor/images/logo_19.jpg" alt="">
+            <img src="/static/pmonitor/images/logo_25.jpg" alt="">
+            <img src="/static/pmonitor/images/logo_26.jpg" alt="">
+            <img src="/static/pmonitor/images/logo_27.jpg" alt="">
+            <img src="/static/pmonitor/images/logo_28.jpg" alt="">
+            <img src="/static/pmonitor/images/logo_33.jpg" alt="">
+            <img src="/static/pmonitor/images/logo_35.jpg" alt="">
+            <img src="/static/pmonitor/images/logo_37.jpg" alt="">
+            <img src="/static/pmonitor/images/logo_39.jpg" alt="">
+            <img src="/static/pmonitor/images/logo_44.jpg" alt="">
+        </div>
+    </div>
+</div>
+<div class="relation">
+    <div class="main_in">
+        <div class="relation_left">
+            <h2>010-51582341</h2>
+            <p>QQ小秘书：2502147068&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp微信小秘书：huwenjing567</p>
+            <button>在线客服</button>
+        </div>
+        <div class="relation_right">
+            <ul>
+                <li>
+                    <h5>QQ小秘书</h5>
+                    <img src="/static/pmonitor/images/relation_20.jpg" alt="">
+                </li>
+                <li>
+                    <h5>微信小秘书</h5>
+                    <img src="/static/pmonitor/images/relation_21.jpg" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+    #parse("../decorators/frame/bottom.vm")
+</body>
+</html>
